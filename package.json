@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/boychina/nextjs-wordcloud/issues"
   },
-  "homepage": "https://github.com/boychina/nextjs-wordcloud#readme"
+  "homepage": "https://github.com/boychina/nextjs-wordcloud#readme",
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  }
 }
