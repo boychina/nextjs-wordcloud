@@ -1,0 +1,19 @@
+{
+  "name": "nextjs-wordcloud",
+  "version": "0.1.0",
+  "description": "☁️ Simple Next.js + D3 wordcloud component with powerful features.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boychina/nextjs-wordcloud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boychina/nextjs-wordcloud/issues"
+  },
+  "homepage": "https://github.com/boychina/nextjs-wordcloud#readme"
+}
