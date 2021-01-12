@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "dev": "webpack --progress --watch --hot",
+    "build": "webpack --progress"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/boychina/nextjs-wordcloud#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.5.1",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"
   }
