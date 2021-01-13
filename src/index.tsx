@@ -1,11 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Hello from './hello';
+import Wordcloud from './components/Wordcloud';
 
-import './index.less';
-
-const App = () => {
-  return <div className="hello">{Hello}</div>;
+const NextWordCloud = (props) => {
+  return <div><Wordcloud tags={{ hello: { value: 10 } }}/></div>;
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default NextWordCloud;

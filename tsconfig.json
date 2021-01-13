@@ -9,7 +9,7 @@
     ],
     "sourceMap": true,
     "baseUrl": ".",
-    "jsx": "react",
+    "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
@@ -23,12 +23,22 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "exclude": [
     "node_modules",
     "build",
     "dist",
     "script"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }
