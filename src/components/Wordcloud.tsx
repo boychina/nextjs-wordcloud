@@ -11,7 +11,12 @@ const layout = cloud()
   .rotate(() => ~~(Math.random() * 2) * 90)
   .fontSize((d) => d.size);
 
-const Wordcloud = ({ tags }) => {
+interface IProps {
+  tags: Object;
+}
+
+const Wordcloud:React.FC<IProps> = (props: IProps) => {
+  const { tags } = props;
   if (!tags || !Object.keys(tags).length) return null;
 
   let maxSize = 1;
