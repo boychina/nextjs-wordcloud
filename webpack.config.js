@@ -1,20 +1,22 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-// const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 
 module.exports = {
+  mode: "development",
+  devtool: 'inline-source-map',
   entry: {
-    app: "./src/index.js",
+    app: "./src/index.tsx",
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "[name].bundle.js",
+    filename: "bundle.js",
   },
   module: {
     rules: [
+      // JavaScript
       {
-        // JavaScript
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
@@ -24,7 +26,44 @@ module.exports = {
           },
         },
       },
+      // Images
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'asset/resource',
+      },
+      // Fonts and SVGs
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/inline',
+      },
+      // CSS, PostCSS, and Sass
+      {
+        test: /\.(less|scss|css)$/,
+        use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader'],
+      },
+      // tsx
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      }
     ],
+  },
+  resolve: {
+    alias: {
+      '@': './src'
+    },
+    extensions: [
+      '.web.js', '.wasm',
+      '.mjs', '.js',
+      '.web.jsx', '.jsx',
+      '.web.ts', '.ts',
+      '.web.tsx', '.tsx',
+      '.json'
+    ],
+    modules: [
+      'node_modules'
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -33,5 +72,14 @@ module.exports = {
       filename: "index.html",
     }),
     new CleanWebpackPlugin(),
+    new FriendlyErrorsWebpackPlugin(),
   ],
+  devServer: {
+    historyApiFallback: true,
+    contentBase: path.join(__dirname, './dist'),
+    open: false,
+    hot: true,
+    quiet: true,
+    port: 8080,
+  },
 };
