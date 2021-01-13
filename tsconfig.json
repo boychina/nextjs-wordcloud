@@ -9,7 +9,7 @@
     ],
     "sourceMap": true,
     "baseUrl": ".",
-    "jsx": "preserve",
+    "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
@@ -25,7 +25,7 @@
       ]
     },
     "skipLibCheck": true,
-    "noEmit": true,
+    "noEmit": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true
