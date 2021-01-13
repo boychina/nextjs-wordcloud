@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Link from 'next/link';
 import NextWordCloud from '../src';
 
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
 
       <main>
         <h1>Next Word Cloud</h1>
-        <NextWordCloud />
+        <NextWordCloud words={[{ name: 'hello', value: 10 }]}/>
       </main>
 
       <footer>
