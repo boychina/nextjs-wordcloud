@@ -10,8 +10,8 @@ module.exports = {
     app: "./src/index.tsx",
   },
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, "."),
+    filename: "index.js",
   },
   module: {
     rules: [
@@ -43,7 +43,7 @@ module.exports = {
       },
       // tsx
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       }
@@ -66,17 +66,17 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: "Nextjs Word Cloud",
-      template: path.resolve(__dirname, "./public/index.html"),
-      filename: "index.html",
-    }),
-    new CleanWebpackPlugin(),
+    // new HtmlWebpackPlugin({
+    //   title: "Nextjs Word Cloud",
+    //   template: path.resolve(__dirname, "./public/index.html"),
+    //   filename: "index.html",
+    // }),
+    // new CleanWebpackPlugin(),
     new FriendlyErrorsWebpackPlugin(),
   ],
   devServer: {
     historyApiFallback: true,
-    contentBase: path.join(__dirname, './dist'),
+    contentBase: path.join(__dirname, '.'),
     open: false,
     hot: true,
     quiet: true,
