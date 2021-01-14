@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import NextWordCloud from '../src';
+import NextWordCloud from '../index';
 
 export default function Home() {
   return (

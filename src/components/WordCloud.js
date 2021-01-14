@@ -3,22 +3,17 @@ import { createCanvas } from "canvas";
 import cloud from "d3-cloud";
 import { random, maxBy } from "lodash";
 import { COLORS } from "@/config/constant";
-import { Word, WordLayout, WordSize } from "@/types/word";
 
-interface IProps {
-  words: Word[];
-}
-
-const Wordcloud: React.FC<IProps> = (props: IProps) => {
-  const { words } = props;
+const WordCloud= (props) => {
+  const { words, containerClass } = props;
 
   if (!words || !words.length) return null;
 
   const maxValue = maxBy(words)?.value || 1;
 
   //构建传入layout的words
-  let resultWords: WordSize[] = [];
-  words.forEach((word: Word) => {
+  let resultWords = [];
+  words.forEach((word) => {
     resultWords.push({
       ...word,
       size:
@@ -26,7 +21,7 @@ const Wordcloud: React.FC<IProps> = (props: IProps) => {
         20,
     });
   });
-  const resultWordsLayout: WordLayout[] = [...resultWords];
+  const resultWordsLayout = [...resultWords];
   const layout = useMemo(
     () =>
       // @ts-ignore：类型校验错误
@@ -43,10 +38,10 @@ const Wordcloud: React.FC<IProps> = (props: IProps) => {
   layout.start();
 
   return (
-    <div>
+    <div className={containerClass}>
       <svg width="400" height="300">
         <g transform="translate(190, 150)">
-          {resultWords.map((word: WordLayout) => (
+          {resultWords.map((word) => (
             <text
               key={word.name}
               textAnchor="middle"
@@ -63,4 +58,4 @@ const Wordcloud: React.FC<IProps> = (props: IProps) => {
   );
 };
 
-export default Wordcloud;
+export default WordCloud;
