@@ -1,6 +1,6 @@
 {
   "name": "nextjs-wordcloud",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "☁️ Simple Next.js + D3 wordcloud component with powerful features.",
   "main": "index.js",
   "scripts": {
