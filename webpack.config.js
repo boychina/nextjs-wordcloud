@@ -10,7 +10,7 @@ module.exports = {
     app: "./src/index.js",
   },
   output: {
-    path: path.resolve(__dirname, "."),
+    path: path.resolve(__dirname, "./lib"),
     filename: "index.js",
   },
   module: {
@@ -76,7 +76,7 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
-    contentBase: path.join(__dirname, '.'),
+    contentBase: path.join(__dirname, './lib'),
     open: false,
     hot: true,
     quiet: true,

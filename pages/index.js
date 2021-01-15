@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import NextWordCloud from '../index';
+import NextWordCloud from '../lib';
+
+console.log("NextWordCloud", NextWordCloud);
 
 export default function Home() {
   return (
@@ -12,7 +14,7 @@ export default function Home() {
 
       <main>
         <h1>Next Word Cloud</h1>
-        <NextWordCloud words={[{ name: 'hello', value: 10 }]}/>
+        <NextWordCloud/>
       </main>
 
       <footer>
